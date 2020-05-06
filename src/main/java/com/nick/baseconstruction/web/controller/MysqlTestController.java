@@ -3,6 +3,7 @@ package com.nick.baseconstruction.web.controller;
 import com.nick.baseconstruction.common.constants.ErrorCode;
 import com.nick.baseconstruction.web.entity.User;
 import com.nick.baseconstruction.web.service.user.UserService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import java.util.Date;
 @Controller
 @RequestMapping("/mysql")
 @CrossOrigin
+@Api(value = "mysql", description = "mysql的测试类",tags = {"mysqls"})
 public class MysqlTestController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -24,8 +26,8 @@ public class MysqlTestController {
     private UserService userService;
 
     @ResponseBody
-    @RequestMapping("/testInsert")
-    public String insertMember( User user){
+    @RequestMapping(value = "/testInsert")
+    public String insertMember(User user){
         try {
             user.setCreateTime(new Date());
             userService.insert(user);
