@@ -37,7 +37,7 @@ public class BaseconstructionApplication {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
-				.apis(basePackage("com.nick.baseconstruction.web.controller"))
+				.apis(basePackage("com.nick.baseconstruction.web.controller.swagger"))
 				.paths(PathSelectors.any())
 				.build();
 	}
