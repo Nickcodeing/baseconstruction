@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.lang.reflect.Method;
 import java.util.Optional;
 
 @Controller
@@ -23,5 +24,16 @@ public class OptionalController {
         user.ifPresent(u->System.out.println(u.getUserName()));
         Optional<Object> o = Optional.ofNullable(null);
         System.out.println(o.get());
+
+        try {
+            Class<?> c = Class.forName("java.lang.String");
+            Method method = c.getMethod("");
+            method.setAccessible(true);
+
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

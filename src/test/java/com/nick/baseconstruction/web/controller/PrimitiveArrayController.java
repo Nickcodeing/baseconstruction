@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -32,5 +31,13 @@ public class PrimitiveArrayController {
         list.remove(1);
         System.out.println(list.size());
         System.out.println(list);
+    }
+
+    @Test
+    public void method2(){
+        Set set = new TreeSet();
+        set.add("111");
+        set.add(new Integer(123));
+        System.out.println(set.toString());
     }
 }

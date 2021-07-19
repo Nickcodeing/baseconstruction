@@ -4,10 +4,13 @@ package com.nick.baseconstruction.web.entity;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 @ConfigurationProperties(prefix = "nick.person")
 @Component
 public class Person {
 
+    @NotNull
     private String name;
     private String age;
     private String sex;

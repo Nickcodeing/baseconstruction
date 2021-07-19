@@ -18,4 +18,13 @@ public class DateController {
         System.out.println(currentTime);
         return currentTime;
     }
+
+
+    @ResponseBody
+    @RequestMapping("/getTime/Test")
+    public String method1(){
+        String currentTime = DateUtils.getCurrentTime();
+        System.out.println(currentTime);
+        return currentTime;
+    }
 }
